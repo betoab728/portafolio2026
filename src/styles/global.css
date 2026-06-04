@@ -1,2 +1,41 @@
 @import "tailwindcss";
 
+html,
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: radial-gradient(
+    ellipse 80% 80% at 50% -20%,
+    rgba(2, 12, 41, 0.9),
+    rgba(2, 10, 34, 0.7)
+  );
+  color: white;
+  min-height: 100vh;
+}
+.card-gold {
+  background-color: rgba(0, 0, 0, 0.45);
+
+  border: 1px solid rgba(201, 183, 24, 0.12);
+
+  border-radius: 8px;
+
+ box-shadow: 0 0 10px rgba(158, 184, 16, 0.5);
+  backdrop-filter: blur(4px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.card-gold:hover {
+  transform: translateY(-4px);
+
+  background-color: rgba(0, 0, 0, 0.58);
+
+  border-color: rgba(201, 183, 24, 0.35);
+
+  box-shadow:
+    0 0 16px rgba(201, 183, 24, 0.35),
+    0 0 40px rgba(201, 183, 24, 0.14);
+}

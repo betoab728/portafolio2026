@@ -1,0 +1,26 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import { proyectos } from "../../data/proyectos";
+---
+
+<section id="proyectos" class="relative py-24">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.28em] text-yellow-300">
+        Proyectos
+      </p>
+      <h2 class="mt-4 text-4xl font-bold leading-tight text-white md:text-5xl">
+        Soluciones full stack para operaciones reales
+      </h2>
+      <p class="mt-5 text-base leading-8 text-zinc-300 md:text-lg">
+        Sistemas empresariales, ERP, automatizacion e interfaces modernas construidas con foco en arquitectura, datos y mantenibilidad.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {proyectos.map((proyecto) => (
+        <ProjectCard proyecto={proyecto} />
+      ))}
+    </div>
+  </div>
+</section>
