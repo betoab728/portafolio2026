@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="980" viewBox="0 0 760 980" role="img" aria-labelledby="title desc">
+  <title id="title">App movil para transportistas</title>
+  <desc id="desc">Mockup de app Android Kotlin para envio de coordenadas GPS y actualizacion de estados operativos.</desc>
+  <rect width="760" height="980" fill="#050b12"/>
+  <rect x="230" y="60" width="300" height="860" rx="44" fill="#0b111a" stroke="#c9b718" stroke-opacity="0.35" stroke-width="3"/>
+  <rect x="254" y="104" width="252" height="772" rx="28" fill="#07131d"/>
+  <text x="284" y="158" fill="#f5e47a" font-family="Arial, sans-serif" font-size="18" font-weight="700">Ruta activa</text>
+  <text x="284" y="190" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="13">ORD-2045 · Residuos liquidos</text>
+  <rect x="284" y="228" width="192" height="120" rx="18" fill="#111827" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="306" y="268" fill="#ffffff" font-family="Arial, sans-serif" font-size="15" font-weight="700">GPS sincronizado</text>
+  <text x="306" y="300" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="13">-12.0464, -77.0428</text>
+  <circle cx="448" cy="286" r="13" fill="#c9b718"/>
+  <path d="M316 668 C338 562 390 594 406 496 C418 426 454 438 464 386" fill="none" stroke="#c9b718" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="316" cy="668" r="10" fill="#f5e47a"/>
+  <circle cx="406" cy="496" r="10" fill="#f5e47a"/>
+  <circle cx="464" cy="386" r="10" fill="#f5e47a"/>
+  <rect x="284" y="714" width="192" height="48" rx="14" fill="#c9b718"/>
+  <text x="322" y="744" fill="#0b111a" font-family="Arial, sans-serif" font-size="14" font-weight="700">Actualizar estado</text>
+  <rect x="284" y="784" width="192" height="48" rx="14" fill="#111827" stroke="#c9b718" stroke-opacity="0.28"/>
+  <text x="332" y="814" fill="#f5e47a" font-family="Arial, sans-serif" font-size="14" font-weight="700">Enviar evidencia</text>
+</svg>

@@ -2,6 +2,105 @@ import type { Proyecto } from "../types/proyecto";
 
 export const proyectos: Proyecto[] = [
   {
+    titulo: "Sistema de Gestion y Trazabilidad de Residuos con Blockchain",
+    descripcion:
+      "Plataforma web y app movil para gestion operativa y trazabilidad de residuos en tiempo real, con monitoreo GPS, blockchain Ethereum y arquitectura distribuida.",
+    resumen:
+      "Sistema empresarial desarrollado para Azul Sostenible S.A.C., empresa operadora de residuos EO-RS. La solucion gestiona cotizaciones, ordenes de servicio y trazabilidad logistica de residuos solidos y liquidos mediante portal web administrativo y app Android para transportistas.",
+    tecnologias: [
+      "Angular",
+      "FastAPI",
+      "PostgreSQL",
+      "Kotlin",
+      "JWT",
+      "Ethereum",
+      "SHA-256",
+      "SendGrid",
+      "REST API",
+    ],
+    imagen: "/assets/sistemas/residuos/login-azul.png",
+    demo: null,
+    github: null,
+    slug: "trazabilidad-residuos-blockchain",
+    destacado: true,
+    sector: "Gestion ambiental / Trazabilidad / Blockchain",
+    capturas: [
+      {
+        src: "/assets/sistemas/residuos/dashboard-azul.png",
+        alt: "Dashboard administrativo de trazabilidad de residuos",
+      },
+      {
+        src: "/assets/sistemas/residuos/loginapp.png",
+        alt: "Aplicacion movil Kotlin para monitoreo GPS de transportistas",
+      },
+    ],
+    capturasDesktop: [
+      {
+        src: "/assets/sistemas/residuos/dashboard-azul.png",
+        alt: "Portal web Angular con dashboard operativo y eventos logisticos",
+      },
+      {
+        src: "/assets/sistemas/residuos/registro-azul.png",
+        alt: "Registro de empresas industriales",
+      },
+      {
+        src: "/assets/sistemas/residuos/ruta-azul.png",
+        alt: "Monitoreo en tiempo real",
+      },
+    ],
+    capturasMobile: [
+      {
+        src: "/assets/sistemas/residuos/loginapp.png",
+        alt: "App Android Kotlin para actualizar estados y coordenadas GPS",
+      },
+      {
+        src: "/assets/sistemas/residuos/monitoreoapp.png",
+        alt: "App Android Kotlin para actualizar estados y coordenadas GPS",
+      },
+    ],
+    arquitectura: [
+      {
+        titulo: "App Kotlin",
+        tecnologia: "Android",
+        descripcion: "Transportistas registran coordenadas GPS, estados operativos y evidencias desde campo.",
+      },
+      {
+        titulo: "API FastAPI",
+        tecnologia: "REST API",
+        descripcion: "Servicios autenticados con JWT para sincronizar eventos moviles y operaciones web.",
+      },
+      {
+        titulo: "PostgreSQL",
+        tecnologia: "Base de datos",
+        descripcion: "Persistencia transaccional de cotizaciones, ordenes, rutas, eventos y trazabilidad.",
+      },
+      {
+        titulo: "Blockchain Ethereum",
+        tecnologia: "Integridad",
+        descripcion: "Registro de evidencias digitales criticas y hashes SHA-256 para transparencia operativa.",
+      },
+      {
+        titulo: "Portal web Angular",
+        tecnologia: "Administracion",
+        descripcion: "Dashboard empresarial para monitoreo, control logistico y gestion operativa en tiempo real.",
+      },
+    ],
+    caracteristicas: [
+      "Gestion de cotizaciones y ordenes de servicio",
+      "Monitoreo GPS en tiempo real",
+      "Trazabilidad georreferenciada",
+      "App movil para transportistas",
+      "Actualizacion de estados operativos",
+      "Dashboard administrativo",
+      "Notificaciones en tiempo real",
+      "Validacion blockchain con Ethereum",
+      "Integridad de eventos con SHA-256",
+      "Arquitectura distribuida cliente-servidor",
+    ],
+    retos:
+      "El principal reto fue disenar una arquitectura distribuida que permitiera sincronizar eventos moviles en tiempo real desde la app Android hacia la plataforma web, manteniendo trazabilidad continua, integridad de informacion y monitoreo operativo georreferenciado. Tambien se integro blockchain Ethereum para registrar evidencias digitales criticas y reforzar la transparencia de los eventos registrados.",
+  },
+  {
     titulo: "Sistema ERP para centros opticos con facturacion electronica",
     descripcion:
       "Sistema ERP para centros opticos con ventas, inventarios, clientes, proveedores, finanzas, operaciones clinicas y emision de comprobantes electronicos hacia SUNAT.",

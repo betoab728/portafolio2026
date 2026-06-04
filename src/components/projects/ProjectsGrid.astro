@@ -13,13 +13,16 @@ import { proyectos } from "../../data/proyectos";
         Soluciones full stack para operaciones reales
       </h2>
       <p class="mt-5 text-base leading-8 text-zinc-300 md:text-lg">
-        Sistemas empresariales, ERP, automatizacion e interfaces modernas construidas con foco en arquitectura, datos y mantenibilidad.
+        Proyectos desarrollados para empresas reales, combinando arquitectura moderna, 
+        escalabilidad y experiencia de usuario.
       </p>
     </div>
 
     <div class="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-      {proyectos.map((proyecto) => (
-        <ProjectCard proyecto={proyecto} />
+      {proyectos.map((proyecto, index) => (
+        <div >
+          <ProjectCard proyecto={proyecto} principal={index === 0} />
+        </div>
       ))}
     </div>
   </div>

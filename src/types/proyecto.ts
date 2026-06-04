@@ -3,6 +3,12 @@ export interface ProyectoMedia {
   alt: string;
 }
 
+export interface ProyectoArquitecturaItem {
+  titulo: string;
+  descripcion: string;
+  tecnologia: string;
+}
+
 export interface Proyecto {
   titulo: string;
   descripcion: string;
@@ -15,6 +21,9 @@ export interface Proyecto {
   destacado?: boolean;
   video?: string;
   capturas: ProyectoMedia[];
+  capturasDesktop?: ProyectoMedia[];
+  capturasMobile?: ProyectoMedia[];
+  arquitectura?: ProyectoArquitecturaItem[];
   caracteristicas: string[];
   retos: string;
   sector: string;

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-labelledby="title desc">
+  <title id="title">Sistema de trazabilidad de residuos con blockchain</title>
+  <desc id="desc">Vista conceptual de un dashboard empresarial con mapa, ruta GPS y nodos blockchain.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08111f"/>
+      <stop offset="0.55" stop-color="#07151b"/>
+      <stop offset="1" stop-color="#111307"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5e47a"/>
+      <stop offset="1" stop-color="#b6a315"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1280" height="800" fill="url(#bg)"/>
+  <circle cx="1070" cy="130" r="210" fill="#c9b718" opacity="0.09"/>
+  <circle cx="200" cy="720" r="260" fill="#1da878" opacity="0.11"/>
+  <rect x="92" y="86" width="1096" height="628" rx="28" fill="#050b12" opacity="0.82" stroke="#c9b718" stroke-opacity="0.22"/>
+  <rect x="132" y="134" width="280" height="72" rx="16" fill="#111827" stroke="#c9b718" stroke-opacity="0.25"/>
+  <text x="158" y="166" fill="#f5e47a" font-family="Arial, sans-serif" font-size="18" font-weight="700">Azul Sostenible EO-RS</text>
+  <text x="158" y="190" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="14">Trazabilidad en tiempo real</text>
+  <rect x="132" y="240" width="368" height="374" rx="22" fill="#07131f" stroke="#ffffff" stroke-opacity="0.08"/>
+  <path d="M178 545 C240 430 283 446 330 342 C366 262 422 312 456 276" fill="none" stroke="url(#gold)" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+  <circle cx="178" cy="545" r="11" fill="#f5e47a"/>
+  <circle cx="330" cy="342" r="11" fill="#f5e47a"/>
+  <circle cx="456" cy="276" r="11" fill="#f5e47a"/>
+  <rect x="548" y="240" width="244" height="158" rx="22" fill="#101820" stroke="#c9b718" stroke-opacity="0.2"/>
+  <text x="578" y="286" fill="#ffffff" font-family="Arial, sans-serif" font-size="22" font-weight="700">API FastAPI</text>
+  <text x="578" y="318" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="15">JWT · REST · Eventos</text>
+  <rect x="836" y="240" width="244" height="158" rx="22" fill="#101820" stroke="#c9b718" stroke-opacity="0.2"/>
+  <text x="866" y="286" fill="#ffffff" font-family="Arial, sans-serif" font-size="22" font-weight="700">PostgreSQL</text>
+  <text x="866" y="318" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="15">Ordenes · Rutas · Logs</text>
+  <rect x="548" y="456" width="244" height="158" rx="22" fill="#101820" stroke="#c9b718" stroke-opacity="0.2"/>
+  <text x="578" y="502" fill="#ffffff" font-family="Arial, sans-serif" font-size="22" font-weight="700">App Kotlin</text>
+  <text x="578" y="534" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="15">GPS · Estados · Campo</text>
+  <rect x="836" y="456" width="244" height="158" rx="22" fill="#101820" stroke="#c9b718" stroke-opacity="0.2"/>
+  <text x="866" y="502" fill="#ffffff" font-family="Arial, sans-serif" font-size="22" font-weight="700">Ethereum</text>
+  <text x="866" y="534" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="15">SHA-256 · Evidencias</text>
+  <path d="M792 320 H836M670 398 V456M958 398 V456M792 536 H836" stroke="#c9b718" stroke-width="2" stroke-opacity="0.55" stroke-dasharray="8 8"/>
+</svg>

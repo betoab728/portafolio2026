@@ -1,0 +1,87 @@
+---
+import type { Experiencia, ExperienciaIcono } from "../../types/experiencia";
+
+interface Props {
+  experiencia: Experiencia;
+}
+
+const { experiencia } = Astro.props;
+
+const iconPaths: Record<ExperienciaIcono, string> = {
+  pos: "M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8H4V6Zm2 12h12M8 14v4m8-4v4",
+  erp: "M3 7h18M5 7v14h14V7M8 11h3v3H8v-3Zm5 0h3v3h-3v-3ZM8 16h8",
+  web: "M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 0c2.5 2.4 3.6 5.3 3.6 9S14.5 18.6 12 21m0-18C9.5 5.4 8.4 8.3 8.4 12S9.5 18.6 12 21M3.6 12h16.8",
+  finance: "M4 19h16M6 17V9m5 8V5m5 12v-7M5 9l6-4 5 5 3-2",
+  infra: "M6 4h12v6H6V4Zm0 10h12v6H6v-6Zm3-7h.01M9 17h.01M13 7h5M13 17h5",
+};
+---
+
+<article class="relative pl-10 md:pl-16">
+  <div class="absolute left-[9px] top-7 z-10 h-5 w-5 rounded-full border-2 border-yellow-300 bg-slate-950 shadow-[0_0_24px_rgba(201,183,24,0.6)] md:left-[17px]"></div>
+
+  <div class="card-gold experience-card p-5 md:p-6">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-start">
+      <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-yellow-300/25 bg-yellow-300/10 text-yellow-200 shadow-[0_0_22px_rgba(201,183,24,0.18)]">
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          class="h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d={iconPaths[experiencia.icono]} />
+        </svg>
+      </div>
+
+      <div class="min-w-0 flex-1">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-yellow-300/80 md:text-sm">
+          {experiencia.periodo}
+        </p>
+        <h3 class="mt-2 text-xl font-semibold leading-snug text-white md:text-2xl">
+          {experiencia.empresa}
+        </h3>
+        <p class="mt-2 text-sm font-semibold text-yellow-200">
+          {experiencia.rol}
+          {experiencia.ubicacion && <span class="text-zinc-400"> · {experiencia.ubicacion}</span>}
+        </p>
+      </div>
+    </div>
+
+    <p class="mt-4 text-sm leading-7 text-zinc-300">
+      {experiencia.resumen}
+    </p>
+
+    <ul class="mt-5 space-y-2.5 text-sm leading-6 text-zinc-200">
+      {experiencia.logros.map((logro) => (
+        <li class="flex gap-3">
+          <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-yellow-300/30 bg-yellow-300/10 text-yellow-200">
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              class="h-3.5 w-3.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m6 12 4 4 8-8" />
+            </svg>
+          </span>
+          <span>{logro}</span>
+        </li>
+      ))}
+    </ul>
+
+    <div class="mt-5 flex flex-wrap gap-2">
+      {experiencia.tecnologias.map((tecnologia) => (
+        <span class="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-xs text-zinc-200">
+          {tecnologia}
+        </span>
+      ))}
+    </div>
+  </div>
+</article>

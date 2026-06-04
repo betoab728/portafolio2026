@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Dashboard desktop de trazabilidad</title>
+  <desc id="desc">Mockup del portal web administrativo con KPIs, tabla operativa y mapa de monitoreo GPS.</desc>
+  <rect width="1280" height="720" fill="#050b12"/>
+  <rect x="42" y="38" width="1196" height="644" rx="26" fill="#0b111a" stroke="#c9b718" stroke-opacity="0.22"/>
+  <rect x="76" y="78" width="210" height="564" rx="18" fill="#070d14"/>
+  <text x="102" y="124" fill="#f5e47a" font-family="Arial, sans-serif" font-size="20" font-weight="700">Trazabilidad</text>
+  <text x="102" y="172" fill="#d4d4d8" font-family="Arial, sans-serif" font-size="15">Dashboard</text>
+  <text x="102" y="214" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="15">Ordenes</text>
+  <text x="102" y="256" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="15">Transportistas</text>
+  <text x="102" y="298" fill="#a1a1aa" font-family="Arial, sans-serif" font-size="15">Blockchain</text>
+  <rect x="326" y="78" width="246" height="112" rx="18" fill="#111827" stroke="#ffffff" stroke-opacity="0.08"/>
+  <rect x="602" y="78" width="246" height="112" rx="18" fill="#111827" stroke="#ffffff" stroke-opacity="0.08"/>
+  <rect x="878" y="78" width="246" height="112" rx="18" fill="#111827" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="352" y="122" fill="#f5e47a" font-family="Arial, sans-serif" font-size="15">Ordenes activas</text>
+  <text x="352" y="160" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">48</text>
+  <text x="628" y="122" fill="#f5e47a" font-family="Arial, sans-serif" font-size="15">Eventos GPS</text>
+  <text x="628" y="160" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">1,284</text>
+  <text x="904" y="122" fill="#f5e47a" font-family="Arial, sans-serif" font-size="15">Hashes validados</text>
+  <text x="904" y="160" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">312</text>
+  <rect x="326" y="228" width="486" height="414" rx="20" fill="#08131d" stroke="#ffffff" stroke-opacity="0.08"/>
+  <path d="M374 560 C458 456 520 512 574 394 C618 298 700 354 760 282" fill="none" stroke="#c9b718" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="374" cy="560" r="10" fill="#f5e47a"/>
+  <circle cx="574" cy="394" r="10" fill="#f5e47a"/>
+  <circle cx="760" cy="282" r="10" fill="#f5e47a"/>
+  <text x="358" y="270" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="700">Monitoreo GPS</text>
+  <rect x="846" y="228" width="278" height="414" rx="20" fill="#08131d" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="878" y="270" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="700">Eventos recientes</text>
+  <g fill="#d4d4d8" font-family="Arial, sans-serif" font-size="14">
+    <text x="878" y="326">ORD-2045 · En ruta</text>
+    <text x="878" y="374">ORD-2044 · Validado blockchain</text>
+    <text x="878" y="422">ORD-2043 · Recojo confirmado</text>
+    <text x="878" y="470">ORD-2042 · Evidencia enviada</text>
+  </g>
+</svg>

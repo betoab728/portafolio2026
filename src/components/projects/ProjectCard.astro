@@ -3,9 +3,10 @@ import type { Proyecto } from "../../types/proyecto";
 
 interface Props {
   proyecto: Proyecto;
+  principal?: boolean;
 }
 
-const { proyecto } = Astro.props;
+const { proyecto, principal = false } = Astro.props;
 ---
 
 <article
@@ -21,9 +22,9 @@ const { proyecto } = Astro.props;
         class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-      {proyecto.destacado && (
+      {(proyecto.destacado || principal) && (
         <span class="absolute left-4 top-4 rounded-full border border-yellow-300/40 bg-yellow-300/15 px-3 py-1 text-xs font-semibold text-yellow-200 backdrop-blur">
-          Destacado
+          {principal ? "Proyecto principal" : "Destacado"}
         </span>
       )}
     </div>
@@ -34,7 +35,7 @@ const { proyecto } = Astro.props;
       {proyecto.sector}
     </p>
 
-    <h3 class="mt-3 text-xl font-semibold leading-snug text-white">
+    <h3 class="mt-3 text-[1.35rem] font-semibold leading-snug text-white">
       <a href={`/proyectos/${proyecto.slug}`} class="transition hover:text-yellow-300">
         {proyecto.titulo}
       </a>
