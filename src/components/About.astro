@@ -1,82 +1,42 @@
 ---
-const pilares = [
-  {
-    titulo: "Backend & APIs",
-    descripcion: "Servicios robustos, autenticacion, datos e integraciones pensadas para operacion continua.",
-    icono: "M4 7h16M4 12h16M4 17h16M8 7v10",
-  },
-  {
-    titulo: "Arquitectura distribuida",
-    descripcion: "Sistemas local-servidor, sincronizacion offline y modulos preparados para crecer.",
-    icono: "M6 8a3 3 0 1 0 0.1 0M18 8a3 3 0 1 0 0.1 0M12 17a3 3 0 1 0 0.1 0M8.6 9.6l2.8 4.8m5-4.8-2.8 4.8",
-  },
-  {
-    titulo: "ERP y facturacion electronica",
-    descripcion: "Soluciones para ventas, inventario, procesos clinicos, reportes y emision electronica.",
-    icono: "M5 4h14v18l-3-2-3 2-3-2-3 2V4Zm4 5h6M9 13h6M9 17h4",
-  },
-  {
-    titulo: "Infraestructura y despliegue",
-    descripcion: "Redes, servidores, seguridad y despliegue de soluciones tecnologicas para empresas.",
-    icono: "M6 4h12v6H6V4Zm0 10h12v6H6v-6Zm3-7h.01M9 17h.01M13 7h5M13 17h5",
-  },
-];
+import { getAbout } from "../i18n/loader";
+
+const { locale } = Astro.locals;
+const about = getAbout(locale);
 ---
 
 <section id="sobre-mi" class="py-24">
   <div class="mx-auto max-w-5xl px-6">
     <div class="mx-auto max-w-3xl text-center">
       <p class="text-xl font-semibold uppercase tracking-[0.28em] text-yellow-300">
-        Sobre mi
+        {about.eyebrow}
       </p>
       <h2 class="mt-4 text-4xl font-bold leading-tight text-white md:text-5xl">
-        Construyendo sistemas útiles para empresas y personas
+        {about.title}
       </h2>
     </div>
 
     <div class="card-gold mt-12 p-6 md:p-8">
       <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div class="space-y-5 text-sm leading-8 text-zinc-300 md:text-base">
-         <p>
-            Soy Ingeniero de Sistemas y me gusta desarrollar software orientado
-            a resolver problemas reales dentro de las empresas.
-          </p>
-
-          <p>
-            He liderado implementaciones tecnologicas desde la etapa de analisis
-            y desarrollo hasta su despliegue en produccion, ayudando a digitalizar
-            procesos empresariales en sectores como opticas, restaurantes, salud,
-            servicios tecnicos y gestion ambiental.
-          </p>
-
-          <p>
-            A lo largo de estos proyectos he trabajado en sistemas ERP,
-            facturacion electronica, plataformas POS, aplicaciones web,
-            soluciones moviles y arquitecturas distribuidas, buscando siempre
-            combinar estabilidad, escalabilidad y una experiencia clara para el usuario.
-          </p>
-    
-          <p>
-            Ademas del desarrollo de software, tambien tengo experiencia en infraestructura, redes,
-            servidores y despliegue de soluciones tecnologicas para empresas.
-          </p>
+          {about.paragraphs.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
         </div>
         <div class="rounded-lg border border-yellow-300/15 bg-black/25 p-5 shadow-[0_0_32px_rgba(201,183,24,0.08)] transition duration-300 hover:border-yellow-300/30 hover:bg-black/35">
                 
                 <p class="text-sm font-semibold uppercase tracking-[0.22em] text-yellow-300/80">
-                  Mi enfoque
+                  {about.focusLabel}
                 </p>
 
                 <p class="mt-4 text-2xl font-semibold leading-snug text-white">
-                  Desarrollo soluciones tecnológicas pensadas para funcionar en operaciones reales.
+                  {about.focusTitle}
                 </p>
 
                 <div class="mt-6 h-px bg-gradient-to-r from-yellow-300/0 via-yellow-300/40 to-yellow-300/0"></div>
 
                 <p class="mt-5 text-sm leading-7 text-zinc-400">
-                  Me gusta participar en todo el proceso: analizar necesidades, diseñar la arquitectura,
-                  desarrollar el sistema y llevarlo hasta producción, construyendo software estable,
-                  escalable y útil para las empresas.
+                  {about.focusDescription}
                 </p>
 
         </div>
@@ -85,7 +45,7 @@ const pilares = [
     </div>
 
     <div class="mt-6 grid gap-4 sm:grid-cols-2">
-      {pilares.map((pilar) => (
+      {about.pilares.map((pilar) => (
         <article class="card-gold group p-5 transition duration-300 hover:-translate-y-1">
           <div class="flex items-start gap-4">
             <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-yellow-300/25 bg-yellow-300/10 text-yellow-200 shadow-[0_0_22px_rgba(201,183,24,0.16)]">

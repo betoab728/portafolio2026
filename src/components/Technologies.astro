@@ -1,6 +1,10 @@
 ---
 import TechnologyCard from "./TechnologyCard.astro";
 import { frontend, backend } from "../data/tecnologias";
+import { getTechnologies } from "../i18n/loader";
+
+const { locale } = Astro.locals;
+const t = getTechnologies(locale);
 ---
 
 <section
@@ -9,7 +13,7 @@ import { frontend, backend } from "../data/tecnologias";
 >
   <div class="max-w-7xl mx-auto px-6">
     <h2 class="text-4xl font-bold text-center mb-16">
-      Tecnologías con las que trabajo
+      {t.heading}
     </h2>
 
     <div class="grid md:grid-cols-2 gap-8 items-stretch">
@@ -18,11 +22,11 @@ import { frontend, backend } from "../data/tecnologias";
       <div class="card-gold p-8 flex flex-col">
 
         <h3 class="mb-4 text-2xl font-semibold text-white">
-          Frontend & Mobile
+          {t.frontend.title}
         </h3>
 
         <p class="mb-6 text-gray-400 leading-relaxed flex-1">
-          Desarrollo interfaces web y aplicaciones móviles utilizando tecnologías que destacan por diferentes fortalezas: Astro por su rendimiento, React por su enfoque basado en componentes, Angular por su arquitectura escalable y Kotlin por su capacidad para crear aplicaciones móviles modernas.
+          {t.frontend.description}
         </p>
 
         <div class="flex flex-wrap items-center justify-center gap-10">
@@ -37,11 +41,11 @@ import { frontend, backend } from "../data/tecnologias";
       <div class="card-gold p-8 flex flex-col">
 
         <h3 class="mb-4 text-2xl font-semibold text-white">
-          Backend
+          {t.backend.title}
         </h3>
 
         <p class="mb-6 text-gray-400 leading-relaxed flex-1">
-          En el backend construyo la lógica de negocio y las APIs apoyándome en C#, Java, Python, Laravel y Node.js, aprovechando la eficiencia, robustez, integración con IA, rapidez de desarrollo y escalabilidad que aporta cada una de estas tecnologías.
+          {t.backend.description}
         </p>
 
         <div class="flex flex-wrap items-center justify-center gap-10">

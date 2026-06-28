@@ -1,0 +1,40 @@
+---
+import type { Locale } from "../i18n/config";
+
+const { locale } = Astro.locals;
+const currentPath = Astro.url.pathname;
+
+const targetLocale: Locale = locale === "es" ? "en" : "es";
+
+const segments = currentPath.split("/").filter(Boolean);
+const rest = segments.slice(1).join("/");
+const esPath = `/es${rest ? `/${rest}` : ""}/`;
+const enPath = `/en${rest ? `/${rest}` : ""}/`;
+
+const isEs = locale === "es";
+const isEn = locale === "en";
+
+const baseClass = "rounded px-2 py-1 font-semibold transition";
+const esClass = `${baseClass} ${isEs ? "bg-yellow-300/15 text-yellow-300" : "text-zinc-500 hover:text-yellow-300"}`;
+const enClass = `${baseClass} ${isEn ? "bg-yellow-300/15 text-yellow-300" : "text-zinc-500 hover:text-yellow-300"}`;
+---
+
+<span class="flex items-center gap-1 text-sm">
+  <a href={esPath} class={esClass} aria-current={isEs ? "page" : undefined} data-locale-link>ES</a>
+  <span class="text-zinc-600" aria-hidden="true">|</span>
+  <a href={enPath} class={enClass} aria-current={isEn ? "page" : undefined} data-locale-link>EN</a>
+</span>
+
+<script>
+  document.querySelectorAll("[data-locale-link]").forEach((link) => {
+    link.addEventListener("click", () => {
+      const href = link.getAttribute("href");
+      if (href) {
+        const match = href.match(/^\/(es|en)\//);
+        if (match) {
+          document.cookie = `preferred_locale=${match[1]}; path=/; max-age=31536000; SameSite=Lax`;
+        }
+      }
+    });
+  });
+</script>

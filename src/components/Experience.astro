@@ -1,19 +1,24 @@
 ---
-import { experiencias } from "../data/experiencias";
+import { getExperiencias } from "../data/experiencias/loader";
+import { getExperience } from "../i18n/loader";
 import ExperienceCard from "./experience/ExperienceCard.astro";
+
+const { locale } = Astro.locals;
+const t = getExperience(locale);
+const experiencias = getExperiencias(locale);
 ---
 
 <section id="experiencia" class="relative py-24">
   <div class="mx-auto max-w-7xl px-6">
     <div class="mx-auto max-w-3xl text-center">
       <p class="text-xl font-semibold uppercase tracking-[0.28em] text-yellow-300">
-        Experiencia Profesional
+        {t.eyebrow}
       </p>
       <h2 class="mt-4 text-4xl font-bold leading-tight text-white md:text-5xl">
-        Trayectoria construyendo sistemas
+        {t.heading}
       </h2>
       <p class="mt-5 text-base leading-8 text-zinc-300 md:text-lg">
-        Experiencia en software empresarial, ERP, POS, infraestructura y aplicaciones full stack con foco en continuidad operativa, datos y escalabilidad.
+        {t.description}
       </p>
     </div>
 

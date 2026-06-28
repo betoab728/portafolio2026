@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://eliasalegre.dev/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliasalegre.dev/en/" />
+  </url>
+  <url>
+    <loc>https://eliasalegre.dev/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliasalegre.dev/es/" />
+  </url>
+  <url>
+    <loc>https://eliasalegre.dev/es/proyectos/trazabilidad-residuos-blockchain/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliasalegre.dev/en/proyectos/trazabilidad-residuos-blockchain/" />
+  </url>
+  <url>
+    <loc>https://eliasalegre.dev/en/proyectos/trazabilidad-residuos-blockchain/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliasalegre.dev/es/proyectos/trazabilidad-residuos-blockchain/" />
+  </url>
+  <url>
+    <loc>https://eliasalegre.dev/es/proyectos/erp-centros-opticos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliasalegre.dev/en/proyectos/erp-centros-opticos/" />
+  </url>
+  <url>
+    <loc>https://eliasalegre.dev/en/proyectos/erp-centros-opticos/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliasalegre.dev/es/proyectos/erp-centros-opticos/" />
+  </url>
+  <url>
+    <loc>https://eliasalegre.dev/es/proyectos/centro-tecnico/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliasalegre.dev/en/proyectos/centro-tecnico/" />
+  </url>
+  <url>
+    <loc>https://eliasalegre.dev/en/proyectos/centro-tecnico/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliasalegre.dev/es/proyectos/centro-tecnico/" />
+  </url>
+  <url>
+    <loc>https://eliasalegre.dev/es/proyectos/citas-medicas/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliasalegre.dev/en/proyectos/citas-medicas/" />
+  </url>
+  <url>
+    <loc>https://eliasalegre.dev/en/proyectos/citas-medicas/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliasalegre.dev/es/proyectos/citas-medicas/" />
+  </url>
+  <url>
+    <loc>https://eliasalegre.dev/es/proyectos/asistencia-reconocimiento-facial/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliasalegre.dev/en/proyectos/asistencia-reconocimiento-facial/" />
+  </url>
+  <url>
+    <loc>https://eliasalegre.dev/en/proyectos/asistencia-reconocimiento-facial/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliasalegre.dev/es/proyectos/asistencia-reconocimiento-facial/" />
+  </url>
+  <url>
+    <loc>https://eliasalegre.dev/es/proyectos/clima-tiempo-real/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliasalegre.dev/en/proyectos/clima-tiempo-real/" />
+  </url>
+  <url>
+    <loc>https://eliasalegre.dev/en/proyectos/clima-tiempo-real/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliasalegre.dev/es/proyectos/clima-tiempo-real/" />
+  </url>
+  <url>
+    <loc>https://eliasalegre.dev/es/proyectos/allqovet-veterinaria/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eliasalegre.dev/en/proyectos/allqovet-veterinaria/" />
+  </url>
+  <url>
+    <loc>https://eliasalegre.dev/en/proyectos/allqovet-veterinaria/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eliasalegre.dev/es/proyectos/allqovet-veterinaria/" />
+  </url>
+</urlset>

@@ -1,3 +1,10 @@
+---
+import { getEducation } from "../i18n/loader";
+
+const { locale } = Astro.locals;
+const education = getEducation(locale);
+---
+
 <section
   id="formacion"
   class="py-24"
@@ -7,44 +14,26 @@
     <h2
       class="text-4xl font-bold text-center mb-16"
     >
-      Formación Académica
+      {education.heading}
     </h2>
 
     <div class="space-y-8">
 
-      <!-- Universidad -->
-      <div
-        class="card-gold p-8"
-      >
-        <h3 class="text-2xl font-semibold">
-          Ingeniería de Sistemas e Informática
-        </h3>
+      {education.degrees.map((degree) => (
+        <div class="card-gold p-8">
+          <h3 class="text-2xl font-semibold">
+            {degree.title}
+          </h3>
 
-        <p class="text-yellow-400 mt-2">
-          Universidad Tecnológica del Perú
-        </p>
+          <p class="text-yellow-400 mt-2">
+            {degree.institution}
+          </p>
 
-        <p class="text-zinc-400 mt-3">
-          2020 — 2025
-        </p>
-      </div>
-
-      <!-- Inglés -->
-      <div
-        class="card-gold p-8"
-      >
-        <h3 class="text-2xl font-semibold">
-          Inglés Americano Avanzado
-        </h3>
-
-        <p class="text-yellow-400 mt-2">
-          ICPNA Piura
-        </p>
-
-        <p class="text-zinc-400 mt-3">
-          2017 — 2020
-        </p>
-      </div>
+          <p class="text-zinc-400 mt-3">
+            {degree.period}
+          </p>
+        </div>
+      ))}
 
     </div>
 
@@ -54,7 +43,7 @@
         target="_blank"
         class="inline-flex items-center px-6 py-3 rounded-xl bg-yellow-400 text-black font-semibold hover:scale-105 transition-transform"
       >
-        Ver títulos y certificados
+        {education.cta}
       </a>
     </div>
 

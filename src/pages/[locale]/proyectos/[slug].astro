@@ -1,17 +1,31 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Navbar from "../../components/Navbar.astro";
-import Footer from "../../components/Footer.astro";
-import { proyectos } from "../../data/proyectos";
+import type { Locale } from "../../../i18n/config";
+import Layout from "../../../layouts/Layout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import { getProyectos, getProyectoBySlug } from "../../../data/proyectos/loader";
+import { getProjects } from "../../../i18n/loader";
 
 export function getStaticPaths() {
-  return proyectos.map((proyecto) => ({
-    params: { slug: proyecto.slug },
-    props: { proyecto },
-  }));
+  const locales: Locale[] = ["es", "en"];
+  const paths: { params: { locale: string; slug: string } }[] = [];
+
+  for (const locale of locales) {
+    const proyectos = getProyectos(locale);
+    for (const proyecto of proyectos) {
+      paths.push({
+        params: { locale, slug: proyecto.slug },
+      });
+    }
+  }
+
+  return paths;
 }
 
-const { proyecto } = Astro.props;
+const { locale: rawLocale, slug } = Astro.params;
+const locale = (rawLocale ?? "es") as Locale;
+const proyecto = getProyectoBySlug(locale, slug)!;
+const t = getProjects(locale);
 const capturasGenerales = proyecto.capturas ?? [];
 const capturasDesktop = proyecto.capturasDesktop ?? [];
 const capturasMobile = proyecto.capturasMobile ?? [];
@@ -27,8 +41,8 @@ const capturasMobile = proyecto.capturasMobile ?? [];
     <section class="border-b border-white/10 py-20">
       <div class="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div>
-          <a href="/#proyectos" class="text-sm font-semibold text-yellow-300 transition hover:text-yellow-200">
-            Volver a proyectos
+          <a href={`/${locale}/#proyectos`} class="text-sm font-semibold text-yellow-300 transition hover:text-yellow-200">
+            {t.detail.back}
           </a>
 
           <p class="mt-8 text-sm font-semibold uppercase tracking-[0.28em] text-yellow-300/80">
@@ -51,7 +65,7 @@ const capturasMobile = proyecto.capturasMobile ?? [];
                 rel={proyecto.demo.startsWith("http") ? "noreferrer" : undefined}
                 class="rounded-lg bg-yellow-300 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-200 focus:ring-offset-2 focus:ring-offset-slate-950"
               >
-                Ver demo
+                {t.detail.cta.demo}
               </a>
             )}
 
@@ -62,7 +76,7 @@ const capturasMobile = proyecto.capturasMobile ?? [];
                 rel="noreferrer"
                 class="rounded-lg border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/40"
               >
-                Ver codigo
+                {t.detail.cta.code}
               </a>
             )}
           </div>
@@ -83,7 +97,7 @@ const capturasMobile = proyecto.capturasMobile ?? [];
     <section class="py-16">
       <div class="mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-[0.8fr_1.2fr]">
         <aside class="card-gold p-6">
-          <h2 class="text-xl font-semibold text-white">Stack tecnico</h2>
+          <h2 class="text-xl font-semibold text-white">{t.detail.stack}</h2>
           <div class="mt-5 flex flex-wrap gap-2">
             {proyecto.tecnologias.map((tecnologia) => (
               <span class="rounded-full border border-yellow-300/20 bg-yellow-300/10 px-3 py-1 text-sm text-yellow-100">
@@ -94,7 +108,7 @@ const capturasMobile = proyecto.capturasMobile ?? [];
         </aside>
 
         <div class="card-gold p-6">
-          <h2 class="text-xl font-semibold text-white">Caracteristicas principales</h2>
+          <h2 class="text-xl font-semibold text-white">{t.detail.features}</h2>
           <ul class="mt-5 grid gap-3 md:grid-cols-2">
             {proyecto.caracteristicas.map((caracteristica) => (
               <li class="rounded-lg border border-white/10 bg-slate-950/35 px-4 py-3 text-sm leading-6 text-zinc-200">
@@ -112,12 +126,12 @@ const capturasMobile = proyecto.capturasMobile ?? [];
           <div class="mb-8 flex flex-col justify-between gap-3 md:flex-row md:items-end">
             <div>
               <p class="text-sm font-semibold uppercase tracking-[0.28em] text-yellow-300/80">
-                Arquitectura
+                {t.detail.architecture}
               </p>
-              <h2 class="mt-3 text-3xl font-bold text-white">Arquitectura de la solucion</h2>
+              <h2 class="mt-3 text-3xl font-bold text-white">{t.detail.architectureHeading}</h2>
             </div>
             <p class="max-w-2xl text-sm leading-7 text-zinc-400">
-              Flujo distribuido entre aplicacion movil, API, datos, portal administrativo y validacion blockchain.
+              {t.detail.architectureDescription}
             </p>
           </div>
 
@@ -153,17 +167,17 @@ const capturasMobile = proyecto.capturasMobile ?? [];
         <div class="mx-auto max-w-7xl px-6">
           <div class="rounded-lg border border-white/10 bg-white/[0.04] p-4 shadow-2xl">
             <div class="mb-4 flex items-center justify-between gap-4 px-2 pt-2">
-              <h2 class="text-xl font-semibold text-white">Demo en video</h2>
+              <h2 class="text-xl font-semibold text-white">{t.detail.demoHeading}</h2>
               <span class="text-sm text-zinc-400">HTML5</span>
             </div>
             <video
               controls
               preload="metadata"
               class="aspect-video w-full rounded-lg bg-black"
-              aria-label={`Demo en video de ${proyecto.titulo}`}
+              aria-label={`${t.detail.demoAriaPrefix} ${proyecto.titulo}`}
             >
               <source src={proyecto.video} type="video/mp4" />
-              Tu navegador no soporta la reproduccion de videos.
+              {t.detail.videoFallback}
             </video>
           </div>
         </div>
@@ -175,12 +189,12 @@ const capturasMobile = proyecto.capturasMobile ?? [];
         <div class="mb-8 flex flex-col justify-between gap-3 md:flex-row md:items-end">
           <div>
             <p class="text-sm font-semibold uppercase tracking-[0.28em] text-yellow-300/80">
-              Capturas
+              {t.detail.screenshots}
             </p>
-            <h2 class="mt-3 text-3xl font-bold text-white">Vistas del sistema</h2>
+            <h2 class="mt-3 text-3xl font-bold text-white">{t.detail.screenshotsHeading}</h2>
           </div>
           <p class="max-w-2xl text-sm leading-7 text-zinc-400">
-            Galeria estatica optimizada para mostrar vistas clave de operacion, monitoreo y administracion.
+            {t.detail.screenshotsDescription}
           </p>
         </div>
 
@@ -210,7 +224,7 @@ const capturasMobile = proyecto.capturasMobile ?? [];
             {capturasDesktop.length > 0 && (
               <div>
                 <p class="text-sm font-semibold uppercase tracking-[0.24em] text-yellow-300/80">
-                  Capturas desktop
+                  {t.detail.desktopScreenshots}
                 </p>
                 <div class="mt-5 grid gap-5">
                   {capturasDesktop.map((captura) => (
@@ -234,7 +248,7 @@ const capturasMobile = proyecto.capturasMobile ?? [];
             {capturasMobile.length > 0 && (
               <div>
                 <p class="text-sm font-semibold uppercase tracking-[0.24em] text-yellow-300/80">
-                  Capturas mobile
+                  {t.detail.mobileScreenshots}
                 </p>
                 <div class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
                   {capturasMobile.map((captura) => (
@@ -262,7 +276,7 @@ const capturasMobile = proyecto.capturasMobile ?? [];
     <section class="pb-24">
       <div class="mx-auto max-w-7xl px-6">
         <div class="card-gold p-6 md:p-8">
-          <h2 class="text-2xl font-semibold text-white">Retos y solucion</h2>
+          <h2 class="text-2xl font-semibold text-white">{t.detail.challenges}</h2>
           <p class="mt-4 text-base leading-8 text-zinc-300">
             {proyecto.retos}
           </p>

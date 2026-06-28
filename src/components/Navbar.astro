@@ -1,10 +1,16 @@
 ---
+import { getNavbar } from "../i18n/loader";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+const { locale } = Astro.locals;
+const nav = getNavbar(locale);
+
 const navItems = [
-  { label: "Inicio", href: "/#inicio" },
-  { label: "Conocimientos", href: "/#conocimientos" },
-  { label: "Proyectos", href: "/#proyectos" },
-  { label: "Experiencia", href: "/#experiencia" },
-  { label: "Sobre mi", href: "/#sobre-mi" },
+  { label: nav.home, href: "/#inicio" },
+  { label: nav.skills, href: "/#conocimientos" },
+  { label: nav.projects, href: "/#proyectos" },
+  { label: nav.experience, href: "/#experiencia" },
+  { label: nav.about, href: "/#sobre-mi" },
 ];
 ---
 
@@ -14,14 +20,14 @@ const navItems = [
 >
   <nav
     class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"
-    aria-label="Navegacion principal"
+    aria-label={nav.aria.mainNav}
   >
     <a
       href="/#inicio"
       class="text-xl font-bold text-white transition-colors hover:text-yellow-300"
       data-nav-link
     >
-      Elias
+      {nav.brand}
     </a>
 
     <ul class="hidden items-center gap-8 text-sm md:flex">
@@ -35,40 +41,55 @@ const navItems = [
           </a>
         </li>
       ))}
+      <li>
+        <LanguageSwitcher />
+      </li>
     </ul>
   </nav>
 </header>
 
-<button
-  id="mobile-menu-button"
-  type="button"
-  class="fixed right-5 top-4 z-[60] flex h-12 w-12 items-center justify-center rounded-lg border border-yellow-300/25 bg-black/70 text-yellow-100 shadow-[0_0_24px_rgba(201,183,24,0.22)] backdrop-blur-md transition duration-300 hover:border-yellow-300/45 hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-yellow-300/70 focus:ring-offset-2 focus:ring-offset-black md:hidden"
-  aria-label="Abrir menu de navegacion"
-  aria-controls="mobile-menu"
-  aria-expanded="false"
->
-  <span class="sr-only">Menu</span>
-  <svg
-    class="h-6 w-6 transition duration-300"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    aria-hidden="true"
+<div class="fixed inset-x-0 top-0 z-50 flex items-center justify-between border-b border-white/10 bg-black/35 px-4 py-3 backdrop-blur-md md:hidden">
+  <a
+    href="/#inicio"
+    class="text-lg font-bold text-white"
+    data-nav-link
   >
-    <path data-menu-icon-line d="M4 7h16" />
-    <path data-menu-icon-line d="M4 12h16" />
-    <path data-menu-icon-line d="M4 17h16" />
-  </svg>
-</button>
+    {nav.brand}
+  </a>
+  <div class="flex items-center gap-3">
+    <LanguageSwitcher />
+    <button
+      id="mobile-menu-button"
+      type="button"
+      class="flex h-10 w-10 items-center justify-center rounded-lg border border-yellow-300/25 bg-black/70 text-yellow-100 shadow-[0_0_24px_rgba(201,183,24,0.22)] backdrop-blur-md transition duration-300 hover:border-yellow-300/45 hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-yellow-300/70 focus:ring-offset-2 focus:ring-offset-black"
+      aria-label={nav.aria.openMenu}
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+    >
+      <span class="sr-only">{nav.aria.menu}</span>
+      <svg
+        class="h-5 w-5 transition duration-300"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path data-menu-icon-line d="M4 7h16" />
+        <path data-menu-icon-line d="M4 12h16" />
+        <path data-menu-icon-line d="M4 17h16" />
+      </svg>
+    </button>
+  </div>
+</div>
 
 <div
   id="mobile-menu"
   class="fixed inset-x-4 top-20 z-[55] hidden rounded-lg border border-yellow-300/20 bg-black/85 p-3 shadow-[0_0_34px_rgba(201,183,24,0.18)] backdrop-blur-xl md:hidden"
 >
-  <ul class="grid gap-1 text-sm" aria-label="Menu mobile">
+  <ul class="grid gap-1 text-sm" aria-label={nav.aria.mobileMenu}>
     {navItems.map((item) => (
       <li>
         <a
@@ -83,7 +104,7 @@ const navItems = [
   </ul>
 </div>
 
-<script>
+<script define:vars={{ ariaOpen: nav.aria.openMenu, ariaClose: nav.aria.closeMenu }}>
   const navbar = document.getElementById("site-navbar");
   const button = document.getElementById("mobile-menu-button");
   const menu = document.getElementById("mobile-menu");
@@ -91,10 +112,10 @@ const navItems = [
 
   let isMenuOpen = false;
 
-  const setMenuState = (open: boolean) => {
+  const setMenuState = (open) => {
     isMenuOpen = open;
     button?.setAttribute("aria-expanded", String(open));
-    button?.setAttribute("aria-label", open ? "Cerrar menu de navegacion" : "Abrir menu de navegacion");
+    button?.setAttribute("aria-label", open ? ariaClose : ariaOpen);
     menu?.classList.toggle("hidden", !open);
   };
 

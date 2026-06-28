@@ -1,0 +1,22 @@
+{
+  "name": "Elias Alegre — Portfolio",
+  "short_name": "Elias Alegre",
+  "description": "Software Engineer portfolio — full stack development, ERP systems, backend and modern solutions.",
+  "start_url": "/es/",
+  "display": "standalone",
+  "background_color": "#020a22",
+  "theme_color": "#020a22",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "128x128",
+      "type": "image/x-icon"
+    }
+  ],
+  "lang": "es"
+}

@@ -1,64 +1,126 @@
 # Portfolio — Elias Alegre
 
-Portafolio web personal desarrollado con **Astro**, **Tailwind CSS** y **React**. Sitio single-page optimizado para rendimiento, con despliegue estático y diseño responsive.
+Professional portfolio built with **Astro**, **Tailwind CSS** and **React**. Multilingual (Spanish/English), fully static, and optimized for performance.
 
 ## Stack
 
-| Tecnología        | Versión |
+| Technology        | Version |
 | :---------------- | :------ |
 | Astro             | 6.x     |
 | Tailwind CSS      | 4.x     |
 | React             | 19.x    |
 | TypeScript        | 5.x     |
 
-## Estructura del proyecto
+## Features
 
-```text
+- **Multilingual** — Spanish (`/es/`) and English (`/en/`) via a custom TypeScript-based i18n architecture
+- **Static generation** — Fully pre-rendered HTML with zero client-side JS overhead
+- **SEO** — Canonical URLs, hreflang alternates, Open Graph, Twitter Cards, sitemap, robots.txt
+- **Responsive** — Mobile-first design with Tailwind CSS
+- **Accessible** — Semantic HTML, ARIA labels, keyboard navigation
+- **Performant** — Lazy loading, optimized images, minimal CSS
+
+## Project Structure
+
+```
 /
-├── public/              # Assets estáticos (favicon, imágenes, fuentes)
+├── public/              # Static assets (images, fonts, favicon, sitemap, robots)
 ├── src/
-│   ├── assets/          # Recursos importados desde componentes
-│   ├── components/      # Componentes reutilizables (.astro y .tsx)
+│   ├── components/      # Reusable Astro components
 │   │   ├── Navbar.astro
 │   │   ├── Hero.astro
 │   │   ├── Technologies.astro
 │   │   ├── Education.astro
-│   │   ├── Projects.astro
 │   │   ├── Experience.astro
 │   │   ├── About.astro
-│   │   └── Footer.astro
-│   ├── content/         # Colecciones de contenido (Markdown/MDX)
-│   ├── data/            # Datos estructurados (JSON, TS)
-│   ├── layouts/         # Plantillas de página
-│   ├── pages/           # Rutas del sitio (file-based routing)
-│   ├── styles/          # Estilos globales y utilidades CSS
-│   └── types/           # Definiciones de TypeScript
-├── astro.config.mjs     # Configuración de Astro + integraciones
+│   │   ├── Footer.astro
+│   │   ├── LanguageSwitcher.astro
+│   │   ├── TechnologyCard.astro
+│   │   ├── experience/
+│   │   │   └── ExperienceCard.astro
+│   │   └── projects/
+│   │       ├── ProjectCard.astro
+│   │       └── ProjectsGrid.astro
+│   ├── data/            # Localized structured data
+│   │   ├── experiencias/
+│   │   │   ├── es.ts
+│   │   │   ├── en.ts
+│   │   │   └── loader.ts
+│   │   ├── proyectos/
+│   │   │   ├── es.ts
+│   │   │   ├── en.ts
+│   │   │   └── loader.ts
+│   │   └── tecnologias.ts
+│   ├── i18n/            # Translation modules
+│   │   ├── config.ts
+│   │   ├── types.ts
+│   │   ├── loader.ts
+│   │   ├── es/          # Spanish translations
+│   │   └── en/          # English translations
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   └── [locale]/
+│   │       ├── index.astro
+│   │       └── proyectos/
+│   │           └── [slug].astro
+│   ├── styles/
+│   │   └── global.css
+│   └── types/           # TypeScript interfaces
+├── docs/
+│   └── i18n-architecture.md
+├── astro.config.mjs
 ├── package.json
 └── tsconfig.json
 ```
 
-## Secciones
+## Sections
 
-| Sección       | Descripción                              |
-| :------------ | :--------------------------------------- |
-| **Hero**      | Presentación principal y llamada a la acción |
-| **Technologies** | Stack técnico y herramientas           |
-| **Education** | Formación académica y certificaciones    |
-| **Projects**  | Proyectos destacados con enlaces         |
-| **Experience** | Trayectoria profesional                 |
-| **About**     | Información personal y habilidades blandas |
-| **Footer**    | Enlaces de contacto y redes sociales     |
+| Section          | Description                          |
+| :--------------- | :----------------------------------- |
+| **Hero**         | Introduction and call to action      |
+| **Technologies** | Technical stack and tools            |
+| **Education**    | Academic background and certifications |
+| **Projects**     | Featured projects with links         |
+| **Experience**   | Professional experience              |
+| **About**        | Personal information and soft skills |
 
-## Comandos
+## Commands
 
-| Comando            | Acción                                           |
-| :----------------- | :----------------------------------------------- |
-| `npm install`      | Instala dependencias                             |
-| `npm run dev`      | Servidor local en `localhost:4321`               |
-| `npm run build`    | Build de producción en `./dist/`                 |
-| `npm run preview`  | Previsualiza el build local antes de desplegar   |
+| Command            | Action                                      |
+| :----------------- | :------------------------------------------ |
+| `npm install`      | Install dependencies                        |
+| `npm run dev`      | Start dev server at `localhost:4321`        |
+| `npm run build`    | Production build to `./dist/`               |
+| `npm run preview`  | Preview production build locally            |
 
-## Despliegue
+## Deployment
 
-El proyecto genera un sitio completamente estático en `dist/`, desplegable en cualquier hosting estático (Vercel, Netlify, Cloudflare Pages, GitHub Pages).
+The project generates a fully static site in `dist/`, deployable to any static hosting:
+
+- **Vercel** — Automatic deploys from Git
+- **Netlify** — Drag-and-drop or Git integration
+- **Cloudflare Pages** — Global CDN with free tier
+- **GitHub Pages** — Free hosting for public repos
+
+Set the `site` URL in `astro.config.mjs` before deploying.
+
+## Adding a Language
+
+1. Copy `src/i18n/es/` → `src/i18n/{locale}/`
+2. Copy `src/data/experiencias/es.ts` → `src/data/experiencias/{locale}.ts`
+3. Copy `src/data/proyectos/es.ts` → `src/data/proyectos/{locale}.ts`
+4. Add the locale to `SUPPORTED_LOCALES` in `src/i18n/config.ts`
+5. Add imports and map entries in `src/i18n/loader.ts` and `src/data/.../loader.ts`
+6. Add the locale route in `src/pages/[locale]/index.astro` `getStaticPaths`
+
+## Adding a Project
+
+1. Add the project to `src/data/proyectos/es.ts` (Spanish)
+2. Add the translated version to `src/data/proyectos/en.ts` (English)
+3. Add images to `public/assets/sistemas/{slug}/`
+4. Add the slug URLs to `public/sitemap.xml`
+
+## License
+
+MIT — see [LICENSE](./LICENSE)

@@ -1,4 +1,4 @@
-import type { Proyecto } from "../types/proyecto";
+import type { Proyecto } from "../../types/proyecto";
 
 export const proyectos: Proyecto[] = [
   {
@@ -273,8 +273,3 @@ export const proyectos: Proyecto[] = [
       "El reto fue traducir los servicios y la identidad de la veterinaria en una experiencia web clara, responsiva y funcional, combinando tecnologias tradicionales con buenas practicas de interfaz.",
   },
 ];
-
-export const proyectosDestacados = proyectos.filter((proyecto) => proyecto.destacado);
-
-export const getProyectoBySlug = (slug: string) =>
-  proyectos.find((proyecto) => proyecto.slug === slug);

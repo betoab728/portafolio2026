@@ -1,20 +1,24 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
-import { proyectos } from "../../data/proyectos";
+import { getProyectos } from "../../data/proyectos/loader";
+import { getProjects } from "../../i18n/loader";
+
+const { locale } = Astro.locals;
+const t = getProjects(locale);
+const proyectos = getProyectos(locale);
 ---
 
 <section id="proyectos" class="relative py-24">
   <div class="mx-auto max-w-7xl px-6">
     <div class="mx-auto max-w-3xl text-center">
       <p class="text-xl font-semibold uppercase tracking-[0.28em] text-yellow-300">
-        Proyectos
+        {t.eyebrow}
       </p>
       <h2 class="mt-4 text-4xl font-bold leading-tight text-white md:text-5xl">
-        Soluciones full stack para operaciones reales
+        {t.heading}
       </h2>
       <p class="mt-5 text-base leading-8 text-zinc-300 md:text-lg">
-        Proyectos desarrollados para empresas reales, combinando arquitectura moderna, 
-        escalabilidad y experiencia de usuario.
+        {t.description}
       </p>
     </div>
 
