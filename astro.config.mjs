@@ -7,7 +7,8 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://eliasalegre.dev",
+  // TODO: Reemplazar por https://eliasalegre.dev cuando el dominio esté configurado en Vercel.
+  site: "https://portafolio2026-seven.vercel.app",
 
   vite: {
     plugins: [tailwindcss()]
