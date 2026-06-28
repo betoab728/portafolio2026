@@ -1,43 +1,64 @@
-# Astro Starter Kit: Minimal
+# Portfolio — Elias Alegre
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Portafolio web personal desarrollado con **Astro**, **Tailwind CSS** y **React**. Sitio single-page optimizado para rendimiento, con despliegue estático y diseño responsive.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Stack
 
-## 🚀 Project Structure
+| Tecnología        | Versión |
+| :---------------- | :------ |
+| Astro             | 6.x     |
+| Tailwind CSS      | 4.x     |
+| React             | 19.x    |
+| TypeScript        | 5.x     |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Estructura del proyecto
 
 ```text
 /
-├── public/
+├── public/              # Assets estáticos (favicon, imágenes, fuentes)
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── assets/          # Recursos importados desde componentes
+│   ├── components/      # Componentes reutilizables (.astro y .tsx)
+│   │   ├── Navbar.astro
+│   │   ├── Hero.astro
+│   │   ├── Technologies.astro
+│   │   ├── Education.astro
+│   │   ├── Projects.astro
+│   │   ├── Experience.astro
+│   │   ├── About.astro
+│   │   └── Footer.astro
+│   ├── content/         # Colecciones de contenido (Markdown/MDX)
+│   ├── data/            # Datos estructurados (JSON, TS)
+│   ├── layouts/         # Plantillas de página
+│   ├── pages/           # Rutas del sitio (file-based routing)
+│   ├── styles/          # Estilos globales y utilidades CSS
+│   └── types/           # Definiciones de TypeScript
+├── astro.config.mjs     # Configuración de Astro + integraciones
+├── package.json
+└── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Secciones
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+| Sección       | Descripción                              |
+| :------------ | :--------------------------------------- |
+| **Hero**      | Presentación principal y llamada a la acción |
+| **Technologies** | Stack técnico y herramientas           |
+| **Education** | Formación académica y certificaciones    |
+| **Projects**  | Proyectos destacados con enlaces         |
+| **Experience** | Trayectoria profesional                 |
+| **About**     | Información personal y habilidades blandas |
+| **Footer**    | Enlaces de contacto y redes sociales     |
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Comandos
 
-## 🧞 Commands
+| Comando            | Acción                                           |
+| :----------------- | :----------------------------------------------- |
+| `npm install`      | Instala dependencias                             |
+| `npm run dev`      | Servidor local en `localhost:4321`               |
+| `npm run build`    | Build de producción en `./dist/`                 |
+| `npm run preview`  | Previsualiza el build local antes de desplegar   |
 
-All commands are run from the root of the project, from a terminal:
+## Despliegue
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+El proyecto genera un sitio completamente estático en `dist/`, desplegable en cualquier hosting estático (Vercel, Netlify, Cloudflare Pages, GitHub Pages).

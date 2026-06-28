@@ -1,89 +1,56 @@
+---
+import TechnologyCard from "./TechnologyCard.astro";
+import { frontend, backend } from "../data/tecnologias";
+---
+
 <section
   id="tecnologias"
   class="py-24"
 >
   <div class="max-w-7xl mx-auto px-6">
-    <h2
-      class="text-4xl font-bold text-center mb-16"
-    >
+    <h2 class="text-4xl font-bold text-center mb-16">
       Tecnologías con las que trabajo
     </h2>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      
+    <div class="grid md:grid-cols-2 gap-8 items-stretch">
+
       <!-- Frontend -->
-     <div class="card-gold p-8">
+      <div class="card-gold p-8 flex flex-col">
 
-  <h3 class="mb-6 text-2xl font-semibold text-white">
-    Frontend & Mobile
-  </h3>
+        <h3 class="mb-4 text-2xl font-semibold text-white">
+          Frontend & Mobile
+        </h3>
 
-  <div class="flex flex-wrap items-center gap-6">
+        <p class="mb-6 text-gray-400 leading-relaxed flex-1">
+          Desarrollo interfaces web y aplicaciones móviles utilizando tecnologías que destacan por diferentes fortalezas: Astro por su rendimiento, React por su enfoque basado en componentes, Angular por su arquitectura escalable y Kotlin por su capacidad para crear aplicaciones móviles modernas.
+        </p>
 
-    <img
-      src="/assets/react.png"
-      alt="React"
-      class="h-14 w-14 object-contain transition duration-300 hover:scale-110"
-    />
+        <div class="flex flex-wrap items-center justify-center gap-10">
+          {frontend.map((tecnologia) => (
+            <TechnologyCard tecnologia={tecnologia} />
+          ))}
+        </div>
 
-    <img
-      src="/assets/angular.png"
-      alt="Angular"
-      class="h-14 w-14 object-contain transition duration-300 hover:scale-110"
-    />
-
-    <img
-      src="/assets/kotlin.png"
-      alt="Kotlin"
-      class="h-14 w-14 object-contain transition duration-300 hover:scale-110"
-    />
-
-  </div>
-
-</div>
+      </div>
 
       <!-- Backend -->
-     <div class="card-gold p-8">
-  
-  <h3 class="mb-6 text-2xl font-semibold text-white">
-    Backend
-  </h3>
+      <div class="card-gold p-8 flex flex-col">
 
-  <div class="flex flex-wrap items-center gap-6">
+        <h3 class="mb-4 text-2xl font-semibold text-white">
+          Backend
+        </h3>
 
-    <img
-      src="/assets/c_sharp.png"
-      alt="C#"
-      class="h-14 w-14 object-contain transition duration-300 hover:scale-110"
-    />
+        <p class="mb-6 text-gray-400 leading-relaxed flex-1">
+          En el backend construyo la lógica de negocio y las APIs apoyándome en C#, Java, Python, Laravel y Node.js, aprovechando la eficiencia, robustez, integración con IA, rapidez de desarrollo y escalabilidad que aporta cada una de estas tecnologías.
+        </p>
 
-    <img
-      src="/assets/java.png"
-      alt="Java"
-      class="h-14 w-14 object-contain transition duration-300 hover:scale-110"
-    />
+        <div class="flex flex-wrap items-center justify-center gap-10">
+          {backend.map((tecnologia) => (
+            <TechnologyCard tecnologia={tecnologia} />
+          ))}
+        </div>
 
-    <img
-      src="/assets/laravel.png"
-      alt="Laravel"
-      class="h-14 w-14 object-contain transition duration-300 hover:scale-110"
-    />
-
-    <img
-      src="/assets/python.png"
-      alt="Python"
-      class="h-14 w-14 object-contain transition duration-300 hover:scale-110"
-    />
-
-    <img
-      src="/assets/node.png"
-      alt="Node.js"
-      class="h-14 w-14 object-contain transition duration-300 hover:scale-110"
-    />
-
-  </div>
-
-</div>
+      </div>
 
     </div>
   </div>
