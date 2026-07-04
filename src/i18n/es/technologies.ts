@@ -8,6 +8,6 @@ export const technologies: TechnologiesTranslations = {
   },
   backend: {
     title: "Backend",
-    description: "En el backend construyo la lógica de negocio y las APIs apoyándome en C#, Java, Python, Laravel y Node.js, aprovechando la eficiencia, robustez, integración con IA, rapidez de desarrollo y escalabilidad que aporta cada una de estas tecnologías.",
+    description: "En el backend construyo la lógica de negocio y las APIs implementando soluciones con C#, Java, Python, Laravel y Node.js, aprovechando la eficiencia, robustez, integración con IA, rapidez de desarrollo y escalabilidad que aporta cada una de estas tecnologías",
   },
 };
