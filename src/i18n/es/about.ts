@@ -4,10 +4,9 @@ export const about: AboutTranslations = {
   eyebrow: "Sobre mi",
   title: "Construyendo sistemas útiles para empresas y personas",
   paragraphs: [
-    "Soy Ingeniero de Sistemas y me gusta desarrollar software orientado a resolver problemas reales dentro de las empresas.",
-    "He liderado implementaciones tecnologicas desde la etapa de analisis y desarrollo hasta su despliegue en produccion, ayudando a digitalizar procesos empresariales en sectores como opticas, restaurantes, salud, servicios tecnicos y gestion ambiental.",
-    "A lo largo de estos proyectos he trabajado en sistemas ERP, facturacion electronica, plataformas POS, aplicaciones web, soluciones moviles y arquitecturas distribuidas, buscando siempre combinar estabilidad, escalabilidad y una experiencia clara para el usuario.",
-    "Ademas del desarrollo de software, tambien tengo experiencia en infraestructura, redes, servidores y despliegue de soluciones tecnologicas para empresas.",
+    "Soy Ingeniero de Sistemas y me apasiona desarrollar software orientado a resolver problemas reales dentro de las empresas.",
+    "He desarrollado sistemas ERP, facturación electrónica, plataformas POS, aplicaciones web, soluciones móviles y arquitecturas distribuidas para sectores como ópticas, restaurantes, salud, servicios técnicos y gestión ambiental, siempre priorizando la estabilidad, la escalabilidad y una excelente experiencia de usuario.",
+    "Además del desarrollo de software, cuento con experiencia en infraestructura, redes, servidores y despliegue de soluciones tecnológicas para empresas.",
   ],
   focusLabel: "Mi enfoque",
   focusTitle: "Desarrollo soluciones tecnológicas pensadas para funcionar en operaciones reales.",

@@ -4,10 +4,9 @@ export const about: AboutTranslations = {
   eyebrow: "About me",
   title: "Building useful systems for businesses and people",
   paragraphs: [
-    "I am a Systems Engineer and I enjoy developing software focused on solving real problems within companies.",
-    "I have led technology implementations from the analysis and development stage through to production deployment, helping digitize business processes in sectors such as optics, restaurants, healthcare, technical services and environmental management.",
-    "Throughout these projects I have worked on ERP systems, electronic invoicing, POS platforms, web applications, mobile solutions and distributed architectures, always seeking to combine stability, scalability and a clear user experience.",
-    "In addition to software development, I also have experience in infrastructure, networking, servers and deployment of technology solutions for businesses.",
+    "I am a Systems Engineer and I am passionate about developing software focused on solving real problems within companies.",
+    "I have developed ERP systems, electronic invoicing, POS platforms, web applications, mobile solutions and distributed architectures for sectors such as optics, restaurants, healthcare, technical services and environmental management, always prioritizing stability, scalability and an excellent user experience.",
+    "In addition to software development, I have experience in infrastructure, networking, servers and deployment of technology solutions for businesses.",
   ],
   focusLabel: "My focus",
   focusTitle: "I develop technology solutions designed to work in real-world operations.",
