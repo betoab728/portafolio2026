@@ -44,36 +44,6 @@ const about = getAbout(locale);
       </div>
     </div>
 
-    <div class="mt-6 grid gap-4 sm:grid-cols-2">
-      {about.pilares.map((pilar) => (
-        <article class="card-gold group p-5 transition duration-300 hover:-translate-y-1">
-          <div class="flex items-start gap-4">
-            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-yellow-300/25 bg-yellow-300/10 text-yellow-200 shadow-[0_0_22px_rgba(201,183,24,0.16)]">
-              <svg
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                class="h-5 w-5 transition duration-300 group-hover:scale-110"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d={pilar.icono} />
-              </svg>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-semibold text-white">
-                {pilar.titulo}
-              </h3>
-              <p class="mt-2 text-sm leading-7 text-zinc-300">
-                {pilar.descripcion}
-              </p>
-            </div>
-          </div>
-        </article>
-      ))}
-    </div>
+    
   </div>
 </section>

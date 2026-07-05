@@ -114,3 +114,17 @@ export interface ProjectsTranslations {
     };
   };
 }
+
+export interface ContactTranslations {
+  eyebrow: string;
+  title: string;
+  description: string;
+  emailLabel: string;
+  emailText: string;
+  whatsappLabel: string;
+  whatsappText: string;
+  aria: {
+    email: string;
+    whatsapp: string;
+  };
+}
