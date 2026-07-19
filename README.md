@@ -1,4 +1,4 @@
-# Portfolio — Elias Alegre
+# Portfolio — Elias Alberto Alegre
 
 Professional portfolio built with **Astro**, **Tailwind CSS** and **React**. Multilingual (Spanish/English), fully static, and optimized for performance.
 
