@@ -1,0 +1,41 @@
+---
+import type { Locale } from "../../../i18n/config";
+import type { Post } from "../../../types/post";
+import Layout from "../../../layouts/Layout.astro";
+import { getPosts } from "../../../data/posts/loader";
+
+export async function getStaticPaths() {
+  return [
+    { params: { locale: "es" } },
+    { params: { locale: "en" } },
+  ];
+}
+
+const { locale } = Astro.params as { locale: Locale };
+const posts: Post[] = await getPosts(locale);
+---
+
+<Layout title="Blog">
+  <main class="py-24">
+    <div class="mx-auto max-w-5xl px-6">
+      <h1 class="text-4xl font-bold text-white">Blog</h1>
+
+      {posts.length === 0 ? (
+        <p class="mt-8 text-zinc-400">No hay artículos publicados todavía.</p>
+      ) : (
+        <ul class="mt-8 space-y-4">
+          {posts.map((post: Post) => (
+            <li>
+              <a
+                href={`/${locale}/blog/${post.slug}/`}
+                class="text-lg text-zinc-200 hover:text-yellow-300"
+              >
+                {post.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </main>
+</Layout>
