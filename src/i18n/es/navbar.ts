@@ -6,6 +6,7 @@ export const navbar: NavbarTranslations = {
   projects: "Proyectos",
   experience: "Experiencia",
   about: "Sobre mi",
+  blog: "Blog",
   brand: "Elias",
   aria: {
     mainNav: "Navegacion principal",

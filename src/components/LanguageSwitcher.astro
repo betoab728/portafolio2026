@@ -20,9 +20,9 @@ const enClass = `${baseClass} ${isEn ? "bg-yellow-300/15 text-yellow-300" : "tex
 ---
 
 <span class="flex items-center gap-1 text-sm">
-  <a href={esPath} class={esClass} aria-current={isEs ? "page" : undefined} data-locale-link>ES</a>
+  <a href={esPath} class={esClass} aria-current={isEs ? "page" : undefined} data-locale-link data-locale="es">ES</a>
   <span class="text-zinc-600" aria-hidden="true">|</span>
-  <a href={enPath} class={enClass} aria-current={isEn ? "page" : undefined} data-locale-link>EN</a>
+  <a href={enPath} class={enClass} aria-current={isEn ? "page" : undefined} data-locale-link data-locale="en">EN</a>
 </span>
 
 <script>

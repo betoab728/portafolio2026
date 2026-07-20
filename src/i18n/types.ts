@@ -4,6 +4,7 @@ export interface NavbarTranslations {
   projects: string;
   experience: string;
   about: string;
+  blog: string;
   brand: string;
   aria: {
     mainNav: string;

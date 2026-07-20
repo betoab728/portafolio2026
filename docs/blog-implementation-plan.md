@@ -320,6 +320,16 @@ Cada fase es desplegable de forma aislada, no rompe fases anteriores, y tiene un
 - Un post sin traducción: cambiar de idioma aterriza en el índice del blog en ese idioma, sin 404.
 - Regresión: `/es/proyectos/{slug}/` y `/en/proyectos/{slug}/` siguen intercambiándose exactamente igual que antes (path-swap sin cambios).
 
+### Regla arquitectónica
+
+El portafolio Astro es un consumidor de contenido.
+
+No implementa reglas de negocio ni valida la consistencia editorial.
+
+La existencia y consistencia de los pares de traducción (`translation_group`) es responsabilidad exclusiva del CMS.
+
+El LanguageSwitcher asume que los datos publicados cumplen las reglas de negocio definidas por el CMS.
+
 ---
 
 ### Fase 8 — SEO por artículo
