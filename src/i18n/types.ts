@@ -128,3 +128,16 @@ export interface ContactTranslations {
     whatsapp: string;
   };
 }
+
+export interface BlogTranslations {
+  eyebrow: string;
+  heading: string;
+  description: string;
+  emptyState: string;
+  dateLabel: string;
+  readingTimeLabel: string;
+  cta: {
+    readMore: string;
+    backToBlog: string;
+  };
+}

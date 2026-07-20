@@ -9,6 +9,7 @@ import type {
   AboutTranslations,
   ProjectsTranslations,
   ContactTranslations,
+  BlogTranslations,
 } from "./types";
 
 import { navbar as navbarEs } from "./es/navbar";
@@ -20,6 +21,7 @@ import { experience as experienceEs } from "./es/experience";
 import { about as aboutEs } from "./es/about";
 import { projects as projectsEs } from "./es/projects";
 import { contact as contactEs } from "./es/contact";
+import { blog as blogEs } from "./es/blog";
 
 import { navbar as navbarEn } from "./en/navbar";
 import { footer as footerEn } from "./en/footer";
@@ -30,6 +32,7 @@ import { experience as experienceEn } from "./en/experience";
 import { about as aboutEn } from "./en/about";
 import { projects as projectsEn } from "./en/projects";
 import { contact as contactEn } from "./en/contact";
+import { blog as blogEn } from "./en/blog";
 
 const navbarMap: Record<Locale, NavbarTranslations> = { es: navbarEs, en: navbarEn };
 const footerMap: Record<Locale, FooterTranslations> = { es: footerEs, en: footerEn };
@@ -40,6 +43,7 @@ const experienceMap: Record<Locale, ExperienceTranslations> = { es: experienceEs
 const aboutMap: Record<Locale, AboutTranslations> = { es: aboutEs, en: aboutEn };
 const projectsMap: Record<Locale, ProjectsTranslations> = { es: projectsEs, en: projectsEn };
 const contactMap: Record<Locale, ContactTranslations> = { es: contactEs, en: contactEn };
+const blogMap: Record<Locale, BlogTranslations> = { es: blogEs, en: blogEn };
 
 export function getNavbar(locale: Locale): NavbarTranslations {
   return navbarMap[locale] ?? navbarEs;
@@ -75,4 +79,8 @@ export function getProjects(locale: Locale): ProjectsTranslations {
 
 export function getContact(locale: Locale): ContactTranslations {
   return contactMap[locale] ?? contactEs;
+}
+
+export function getBlog(locale: Locale): BlogTranslations {
+  return blogMap[locale] ?? blogEs;
 }
