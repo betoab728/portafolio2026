@@ -15,7 +15,7 @@ const { proyecto, principal = false } = Astro.props;
 <article
   class="card-gold group relative flex h-full flex-col overflow-hidden"
 >
-  <a href={`/proyectos/${proyecto.slug}`} class="block" aria-label={`${t.aria.detailPrefix} ${proyecto.titulo}`}>
+  <a href={`/${locale}/proyectos/${proyecto.slug}`} class="block" aria-label={`${t.aria.detailPrefix} ${proyecto.titulo}`}>
     <div class="relative aspect-[16/10] overflow-hidden bg-slate-950">
       <img
         src={proyecto.imagen}
@@ -39,7 +39,7 @@ const { proyecto, principal = false } = Astro.props;
     </p>
 
     <h3 class="mt-3 text-[1.35rem] font-semibold leading-snug text-white">
-      <a href={`/proyectos/${proyecto.slug}`} class="transition hover:text-yellow-300">
+      <a href={`/${locale}/proyectos/${proyecto.slug}`} class="transition hover:text-yellow-300">
         {proyecto.titulo}
       </a>
     </h3>
@@ -58,7 +58,7 @@ const { proyecto, principal = false } = Astro.props;
 
     <div class="mt-6 flex flex-wrap gap-3">
       <a
-        href={`/proyectos/${proyecto.slug}`}
+        href={`/${locale}/proyectos/${proyecto.slug}`}
         class="inline-flex items-center justify-center rounded-lg bg-yellow-300 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-200 focus:ring-offset-2 focus:ring-offset-slate-950"
       >
         {t.cta.detail}
