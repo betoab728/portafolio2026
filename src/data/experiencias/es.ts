@@ -4,7 +4,7 @@ export const experiencias: Experiencia[] = [
   {
     empresa: "Mikipu S.A.C",
     ubicacion: "Lima",
-    periodo: "Marzo 2025 - Actualidad",
+    periodo: "Marzo 2025",
     rol: "Desarrollador de software POS",
     resumen:
       "Desarrollo de funcionalidades para Xacto POS, una solucion orientada a operaciones gastronomicas con arquitectura distribuida, continuidad offline y emision electronica.",
